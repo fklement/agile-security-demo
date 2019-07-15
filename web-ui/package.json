@@ -1,0 +1,20 @@
+{
+    "name": "web-ui",
+    "version": "1.0.0",
+    "description": "This is a WebUI for demo purposes",
+    "main": "index.js",
+    "config": {
+        "token": "ApnYb2BYEbJ3cVnuo1Igc0v5Y8yNf3GCqwAuTOjpSOpSd2vbNFjyXu6QuyIvOyqB"
+    },
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "export TOKEN=$npm_package_config_token; node index.js"
+    },
+    "author": "fklement",
+    "license": "ISC",
+    "dependencies": {
+        "agile-sdk": "^1.2.6",
+        "express": "^4.17.1",
+        "pug": "^2.0.3"
+    }
+}

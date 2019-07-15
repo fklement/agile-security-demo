@@ -1,0 +1,31 @@
+html
+    head
+        title!=title
+        <link rel="stylesheet" href="style.css">
+
+    body
+        <section class="hero is-primary">
+            <div class="hero-body">
+                <div class="container">
+                <h1 class="title">Demo UI</h1>
+                <h2 class="subtitle">AGILE IoT</h2>
+                </div>
+            </div>
+        </section>
+        <section class="section">
+            <div class="container">
+                <div class="columns">
+                    <div class="column">
+                        <a id="fallEvent" class="button is-danger is-outlined is-vertical-center">Trigger event "fall"</a>
+                    </div>
+                    <div class="column">
+                        <a id="normalEvent" class="button is-success is-outlined is-vertical-center">Trigger event "normal"</a>
+                    </div>
+                    <div class="column">
+                        <a id="locationEvent" class="button is-info is-outlined is-vertical-center">Get location "living room"</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <script src="helper.js"></script>
