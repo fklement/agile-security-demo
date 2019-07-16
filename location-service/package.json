@@ -1,0 +1,14 @@
+{
+  "name": "location-service",
+  "version": "1.0.0",
+  "description": "This is a simple service to retrieve a random location",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "fklement",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
