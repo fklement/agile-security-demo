@@ -4,7 +4,7 @@
     "description": "This is a WebUI for demo purposes",
     "main": "index.js",
     "config": {
-        "token": "ApnYb2BYEbJ3cVnuo1Igc0v5Y8yNf3GCqwAuTOjpSOpSd2vbNFjyXu6QuyIvOyqB"
+        "token": "4Bd1bLrn6gtx0PSlAA1d7B0kOFNFiFq88pWDbSgrrWQqeNdZyavUie3LXYDN3lxB"
     },
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
@@ -14,7 +14,10 @@
     "license": "ISC",
     "dependencies": {
         "agile-sdk": "^1.2.6",
+        "bulma": "^0.7.5",
         "express": "^4.17.1",
-        "pug": "^2.0.3"
+        "pug": "^2.0.3",
+        "request": "^2.88.0",
+        "toastr": "^2.1.4"
     }
 }

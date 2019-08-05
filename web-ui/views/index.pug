@@ -1,6 +1,8 @@
 html
     head
         title!=title
+        <link rel="stylesheet" href="/bulma/bulma.css">
+        <link rel="stylesheet" href="/toastr/toastr.min.css">
         <link rel="stylesheet" href="style.css">
 
     body
@@ -16,16 +18,29 @@ html
             <div class="container">
                 <div class="columns">
                     <div class="column">
-                        <a id="fallEvent" class="button is-danger is-outlined is-vertical-center">Trigger event "fall"</a>
+                        <a id="fallevent" class="button is-danger is-outlined is-vertical-center">Trigger event "fall"</a>
                     </div>
                     <div class="column">
-                        <a id="normalEvent" class="button is-success is-outlined is-vertical-center">Trigger event "normal"</a>
+                        <a id="normalevent" class="button is-success is-outlined is-vertical-center">Trigger event "normal"</a>
                     </div>
                     <div class="column">
-                        <a id="locationEvent" class="button is-info is-outlined is-vertical-center">Get location "living room"</a>
+                        <a id="locationevent" class="button is-info is-outlined is-vertical-center">Get location "living room"</a>
+                    </div>
+                </div>
+                <div class="columns">
+                    <div class="column">
+                        <a id="createdoc" class="button is-success is-vertical-center">Create Doctor</a>
+                    </div>
+                    <div class="column">
+                        <a id="deletedoc" class="button is-danger is-vertical-center">Delete Doctor</a>
+                    </div>
+                    <div class="column">
+                        <a id="checkpolicy" class="button is-info is-vertical-center">Check policy</a>
                     </div>
                 </div>
             </div>
         </section>
 
         <script src="helper.js"></script>
+        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+        <script src="/toastr/toastr.min.js"></script>
