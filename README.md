@@ -15,7 +15,7 @@ The config part looks like the following:
 
 Now you are ready to go:
 ```shell
-$ npm install
+$ npm run prep
 $ npm start
 
 > web-ui@1.0.0 start /Users/fklement/Code/semiotics/fklement/agile-security-demo

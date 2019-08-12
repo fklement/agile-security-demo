@@ -553,6 +553,11 @@ module.exports = {
       }
     }],
     "client": [{
+      "id": "DemoClientRom",
+      "name": "DemoClientRom",
+      "clientSecret": "spiderman3000",
+      "redirectURI": "http://set-automatically:4444/demo/callback"
+    }, {
       "id": "AuthCodeClient",
       "name": "AuthCodeClient",
       "clientSecret": "Ultrasecretstuff",

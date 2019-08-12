@@ -3,7 +3,7 @@ html
         title!=title
         <link rel="stylesheet" href="/bulma/bulma.css">
         <link rel="stylesheet" href="/toastr/toastr.min.css">
-        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="/style.css">
 
     body
         <section class="hero is-primary">
@@ -35,12 +35,12 @@ html
                         <a id="deletedoc" class="button is-danger is-vertical-center">Delete Doctor</a>
                     </div>
                     <div class="column">
-                        <a id="checkpolicy" class="button is-info is-vertical-center">Check policy</a>
+                        <a id="checkpolicy" data-user="#{userID}" class="button is-info is-vertical-center">Check policy</a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <script src="helper.js"></script>
+        <script src="/helper.js"></script>
         <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
         <script src="/toastr/toastr.min.js"></script>

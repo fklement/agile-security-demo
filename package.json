@@ -1,0 +1,24 @@
+{
+  "name": "agile-security-demo",
+  "version": "1.0.0",
+  "description": "This is the demo for the meeting in rome",
+  "main": "/",
+  "scripts": {
+    "prep": "npm install && cd web-ui && npm install && cd .. && cd location-service && npm install",
+    "start": "concurrently \"npm -C ./web-ui run start\" \"npm -C ./location-service run start\"",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fklement/agile-security-demo.git"
+  },
+  "author": "fklement",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/fklement/agile-security-demo/issues"
+  },
+  "homepage": "https://github.com/fklement/agile-security-demo#readme",
+  "dependencies": {
+    "concurrently": "^4.1.1"
+  }
+}

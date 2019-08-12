@@ -3,12 +3,9 @@
     "version": "1.0.0",
     "description": "This is a WebUI for demo purposes",
     "main": "index.js",
-    "config": {
-        "token": "4Bd1bLrn6gtx0PSlAA1d7B0kOFNFiFq88pWDbSgrrWQqeNdZyavUie3LXYDN3lxB"
-    },
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
-        "start": "export TOKEN=$npm_package_config_token; node index.js"
+        "start": "node index.js"
     },
     "author": "fklement",
     "license": "ISC",
@@ -18,6 +15,10 @@
         "express": "^4.17.1",
         "pug": "^2.0.3",
         "request": "^2.88.0",
-        "toastr": "^2.1.4"
+        "toastr": "^2.1.4",
+        "http-errors": "^1.5.1",
+        "connect-ensure-login": "^0.1.1",
+        "passport": "^0.3.2",
+        "passport-oauth2": "^1.3.0"
     }
 }

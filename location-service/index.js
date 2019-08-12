@@ -4,10 +4,10 @@ var app = express();
 var locations = ["living room", "kitchen", "bedroom", "garage", "bathroom", "basement"]
 
 
-app.get("/location", (req, res, next) => {
+app.get("/location/1/status", (req, res, next) => {
     res.json(locations[Math.floor(Math.random() * locations.length)]);
 });
 
-app.listen(4000, () => {
+app.listen(8081, () => {
     console.log("Location service running on port 4000");
 });
