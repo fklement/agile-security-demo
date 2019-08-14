@@ -1,10 +1,10 @@
 const policyCheck = document.querySelector('#checkpolicy');
 var definedEvents = [
-    ['fallevent', 'admin'],
-    ['normalevent', 'admin'],
-    ['locationevent', 'admin'],
-    ['createdoc', 'doc'],
-    ['deletedoc', 'doc'],
+    ['fallevent', 'patient'],
+    ['normalevent', 'patient'],
+    ['locationevent', 'patient'],
+    ['createdoc', 'doctor'],
+    ['deletedoc', 'doctor'],
     ['checkpolicy', policyCheck.dataset.user]
 ];
 

@@ -16,15 +16,12 @@ function router(application_conf, idm_conf, router) {
                 idm: conf.idm_url,
                 token: token
             });
-
-            agile.idm.user.get(username, auth_type).then(function () {
-                agile.policies.pap.set({
-                    entityId: username + '!@!' + auth_type,
-                    entityType: 'user',
-                    field: 'location',
-                    policy: conf.policies['fall']
-                });
-
+            agile.policies.pap.set({
+                entityId: username + '!@!' + auth_type,
+                entityType: 'user',
+                field: 'location',
+                policy: conf.policies['fall']
+            }).then(function (r) {
                 return res.status(200).send({
                     text: 'Sucessfully set status to fall'
                 });
@@ -44,14 +41,12 @@ function router(application_conf, idm_conf, router) {
                 token: token
             });
 
-            agile.idm.user.get(username, auth_type).then(function () {
-                agile.policies.pap.set({
-                    entityId: username + '!@!' + auth_type,
-                    entityType: 'user',
-                    field: 'location',
-                    policy: conf.policies['normal']
-                });
-
+            agile.policies.pap.set({
+                entityId: username + '!@!' + auth_type,
+                entityType: 'user',
+                field: 'location',
+                policy: conf.policies['normal']
+            }).then(function (r) {
                 return res.status(200).send({
                     text: 'Sucessfully set status to normal'
                 });
@@ -79,7 +74,7 @@ function router(application_conf, idm_conf, router) {
             }).then(function (user) {
                 console.log('user created ' + JSON.stringify(user));
                 return res.status(201).send({
-                    text: "Created doc successfully"
+                    text: "Created user doctor successfully"
                 });
             }).catch(function (err) {
                 console.log(err);
@@ -103,7 +98,7 @@ function router(application_conf, idm_conf, router) {
             }).then(function (_deletions) {
                 console.log('user deleted');
                 return res.status(200).send({
-                    text: "Deleted doc successfully"
+                    text: "Deleted user doctor successfully"
                 });
             });
         });
@@ -120,7 +115,7 @@ function router(application_conf, idm_conf, router) {
 
             agile.idm.user.getCurrentUserInfo().then(function (data) {
                 return agile.policies.pdp.evaluate([{
-                    entityId: data.id,
+                    entityId: 'patient!@!local',
                     entityType: 'user',
                     field: 'location',
                     method: 'read'
@@ -129,11 +124,11 @@ function router(application_conf, idm_conf, router) {
                 console.log('pdp results' + JSON.stringify(results));
                 if (results[0])
                     return res.status(200).send({
-                        text: req.query.username + " can read the checked field"
+                        text: req.query.username + " can read the location field"
                     });
                 else
                     return res.status(403).send({
-                        text: req.query.username + " can't read the checked field"
+                        text: req.query.username + " can't read the location field"
                     });
             }).catch(function (err) {
                 console.log(err);
@@ -157,7 +152,7 @@ function router(application_conf, idm_conf, router) {
             }, function (error, response, body) {
                 console.log(response);
                 if (!error && response.statusCode == 200) {
-                    console.log(body) // Print the google web page.
+                    console.log(body);
                 }
             })
         });

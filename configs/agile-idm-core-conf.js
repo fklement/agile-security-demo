@@ -239,17 +239,17 @@ module.exports = {
               lock: "attrEq",
               args: ["role", "admin"]
             }]
-          },
-          {
-            op: "read",
-            locks: [{
-              lock: "hasType",
-              args: ["/user"]
-            }, {
-              lock: "attrEq",
-              args: ["role", "doctor"]
-            }]
           }
+          // {
+          //   op: "read",
+          //   locks: [{
+          //     lock: "hasType",
+          //     args: ["/user"]
+          //   }, {
+          //     lock: "attrEq",
+          //     args: ["role", "doctor"]
+          //   }]
+          // }
         ],
         "policies.location": [
           // can be read by everyone
@@ -539,7 +539,7 @@ module.exports = {
   }],
   "configure_on_boot": {
     "user": [{
-      "user_name": "admin",
+      "user_name": "patient",
       "auth_type": "local",
       "role": "admin",
       "password": "secret",
@@ -586,5 +586,4 @@ module.exports = {
     regex: '^actions'
     //regex in case we want to log only certain
   }
-
 };
