@@ -12,7 +12,9 @@ function router(conf, idm_conf, router) {
     router.route('/demo/callback').get(passport.authenticate('oauth2', {
             failureRedirect: '/login'
         }),
+
         function (req, res) {
+            console.log(req.user.id);
             res.render('demo', {
                 title: 'Demo Web UI',
                 userID: req.user.id

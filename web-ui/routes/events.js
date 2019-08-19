@@ -140,20 +140,29 @@ function router(application_conf, idm_conf, router) {
 
 
     router.route('/location').post(function (req, res) {
-        username = req.query.username
-        tokens.find(username + '!@!' + auth_type, function (_error, token) {
+        username = req.query.username;
+        tokens.find(username, function (_error, token) {
             request({
                 method: 'GET',
                 headers: {
                     'Content-Type': 'application/json',
                     'Authorization': 'bearer ' + token
                 },
+                json: true,
                 uri: 'http://localhost:8080/location/1/status'
             }, function (error, response, body) {
-                console.log(response);
-                if (!error && response.statusCode == 200) {
-                    console.log(body);
+                if (response.statusCode == 200) {
+                    returnText = body.split(',', 2);
+                    return res.status(200).send({
+                        text: "The current position of the patient is: " + returnText[1]
+                    });
+                } else {
+                    returnText = body.split(',', 2);
+                    return res.status(response.statusCode).send({
+                        text: returnText[1]
+                    });
                 }
+
             })
         });
     });
