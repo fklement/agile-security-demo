@@ -6,11 +6,11 @@ html
         <link rel="stylesheet" href="/style.css">
 
     body
-        <section class="hero is-primary">
+        <section class="hero is-#{color}">
             <div class="hero-body">
                 <div class="container">
-                <h1 class="title">Demo UI</h1>
-                <h2 class="subtitle">AGILE IoT</h2>
+                <h1 class="title">#{userID}</h1>
+                <h2 class="subtitle">Demo - ROME</h2>
                 </div>
             </div>
         </section>
@@ -24,7 +24,7 @@ html
                         <a id="normalevent" class="button is-success is-outlined is-vertical-center">Trigger event "normal"</a>
                     </div>
                     <div class="column">
-                        <a id="locationevent" class="button is-info is-outlined is-vertical-center">Get location "living room"</a>
+                        <a id="location" data-user="#{userID}" class="button is-info is-outlined is-vertical-center">Get location</a>
                     </div>
                 </div>
                 <div class="columns">

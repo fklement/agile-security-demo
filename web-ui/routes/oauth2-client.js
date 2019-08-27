@@ -3,7 +3,7 @@ var login = require('connect-ensure-login');
 var tokens = require('../db/tokens');
 var request = require('request');
 
-function router(conf, idm_conf, router) {
+function router(_conf, idm_conf, router) {
     /*
      Routes for Oauth2 endpoint as client
     */
@@ -14,16 +14,23 @@ function router(conf, idm_conf, router) {
         }),
 
         function (req, res) {
-            console.log(req.user.id);
+            var color;
+
+            if (req.user.user_name == "doctor")
+                color = "warning";
+            else
+                color = "primary";
+
             res.render('demo', {
                 title: 'Demo Web UI',
-                userID: req.user.id
+                userID: req.user.id,
+                color: color
             })
         });
 
     router.route('/').get(login.ensureLoggedIn('/demo/'), function (req, res) {
         res.render('demo', {
-            title: 'Demo W2eb UI',
+            title: 'Demo Web UI',
             userID: req.user.id
         })
     });

@@ -1,4 +1,3 @@
-var login = require('connect-ensure-login');
 var tokens = require('../db/tokens');
 var request = require('request');
 var conf = require('../conf/event_conf.js');
@@ -6,7 +5,7 @@ var conf = require('../conf/event_conf.js');
 
 var auth_type = conf.auth_type;
 
-function router(application_conf, idm_conf, router) {
+function router(_application_conf, _idm_conf, router) {
 
     router.route('/fallevent').post(function (req, res) {
         username = req.query.username
@@ -26,8 +25,9 @@ function router(application_conf, idm_conf, router) {
                     text: 'Sucessfully set status to fall'
                 });
             }).catch(function (err) {
-                console.log(err);
-                return res.status(err.response.status).send(err.response.data.error);
+                return res.status(err.response.status).send({
+                    text: err.response.data.error
+                })
             });
         });
     });
@@ -51,8 +51,9 @@ function router(application_conf, idm_conf, router) {
                     text: 'Sucessfully set status to normal'
                 });
             }).catch(function (err) {
-                console.log(err);
-                return res.status(err.response.status).send(err.response.data.error);
+                return res.status(err.response.status).send({
+                    text: err.response.data.error
+                });
             });
         });
     });
@@ -72,13 +73,14 @@ function router(application_conf, idm_conf, router) {
                     'password': 'secret'
                 });
             }).then(function (user) {
-                console.log('user created ' + JSON.stringify(user));
+                console.log('user created ');
                 return res.status(201).send({
                     text: "Created user doctor successfully"
                 });
             }).catch(function (err) {
-                console.log(err);
-                return res.status(err.response.status).send(err.response.data.error);
+                return res.status(err.response.status).send({
+                    text: err.response.data.error
+                });
             });
         });
     });
@@ -132,7 +134,9 @@ function router(application_conf, idm_conf, router) {
                     });
             }).catch(function (err) {
                 console.log(err);
-                return res.status(err.response.status).send(err.response.data.error);
+                return res.status(err.response.status).send({
+                    text: err.response.data.error
+                });
             });
         });
     });

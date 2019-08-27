@@ -2,7 +2,6 @@ var conf = require('./conf/oauth-client-conf');
 var express = require('express');
 var fs = require('fs');
 var https = require('https');
-var request = require('request');
 var passport = require('passport');
 require('./passport/serializer');
 require('./passport/strategy')(conf.oauth2);
