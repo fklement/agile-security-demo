@@ -14,6 +14,12 @@ var definedEvents = [
 function triggerEvent(event, id) {
 
     event.addEventListener('click', function (e) {
+        if (event.id == "fallevent") {
+            document.getElementById("patient!@!local").classList.add('rotate-fall');
+        }
+        if (event.id == "normalevent") {
+            document.getElementById("patient!@!local").classList.remove('rotate-fall');
+        }
         fetch(`/${event.id}?username=${id}`, {
                 method: 'POST'
             }).then(function (response) {

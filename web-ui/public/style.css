@@ -2,3 +2,31 @@
     display: flex;
     align-items: center;
 }
+
+.bind-to-bottom {
+    bottom: 0;
+    left: 0;
+    right: 0;
+    position: fixed;
+}
+
+.rotate-fall {
+
+    -webkit-transition-duration: 0.8s;
+    -moz-transition-duration: 0.8s;
+    -o-transition-duration: 0.8s;
+    transition-duration: 0.8s;
+
+    -webkit-transition-property: -webkit-transform;
+    -moz-transition-property: -moz-transform;
+    -o-transition-property: -o-transform;
+    transition-property: transform;
+
+    overflow: hidden;
+}
+
+.rotate-fall {
+    -webkit-transform: rotate(90deg);
+    -moz-transform: rotate(90deg);
+    -o-transform: rotate(90deg);
+}
